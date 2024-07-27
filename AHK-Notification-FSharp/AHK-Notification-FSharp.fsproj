@@ -9,7 +9,7 @@
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
     <PackageId>StarlyCode.AHK-Notification-FSharp</PackageId>
     <Title>AHK-Notification-FSharp</Title>
-    <VersionPrefix>0.3.17</VersionPrefix>
+    <VersionPrefix>0.3.18</VersionPrefix>
     <Description>
       AHK-Notification-FSharp provides a simple way to display toast notifications from dotnet applications.
     </Description>
@@ -27,12 +27,5 @@
   </ItemGroup>
   <Target Name="PreBuild" BeforeTargets="Build">
     <Exec Command="copy $(ProjectDir)..\ahkpm-modules\github.com\pstaszko\AHK-Notification\AHK-Notification.exe $(ProjectDir)AHK-Notification\" />
-  </Target>
-  <PropertyGroup>
-    <!-- https://docs.microsoft.com/en-us/visualstudio/msbuild/property-functions?view=vs-2022#calling-instance-methods-on-static-properties -->
-    <TimestampNow>$([System.DateTime]::Now.ToString('yyyyMMddHHmmss'))</TimestampNow>
-  </PropertyGroup>
-  <Target Name="BuildNuget" AfterTargets="AfterBuild">
-    <Exec Command="dotnet pack AHK-Notification-FSharp.fsproj --no-build --include-symbols -o c:\dev\local-packages --version-suffix prerelease$(TimestampNow)" />
   </Target>
 </Project>
