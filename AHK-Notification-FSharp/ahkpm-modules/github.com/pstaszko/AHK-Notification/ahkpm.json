@@ -1,0 +1,16 @@
+{
+  "version": "0.0.2",
+  "description": "AHK-Notification",
+  "repository": "https://github.com/pstaszko/AHK-Notification",
+  "website": "https://github.com/pstaszko/AHK-Notification",
+  "license": "MIT",
+  "issueTracker": "https://github.com/pstaszko/AHK-Notification/issues",
+  "include": "AHK-Notification.ahk",
+  "author": {
+    "name": "Paul Staszko",
+    "email": "",
+    "website": ""
+  },
+  "scripts": {},
+  "dependencies": {}
+}

@@ -1,0 +1,18 @@
+{
+  "version": "1.0.0",
+  "description": "",
+  "repository": "https://github.com/StarlyCode/AHK-Notification-FSharp",
+  "website": "https://github.com/StarlyCode/AHK-Notification-FSharp",
+  "license": "MIT",
+  "issueTracker": "https://github.com/StarlyCode/AHK-Notification-FSharp/issues",
+  "include": "",
+  "author": {
+    "name": "Paul Staszko",
+    "email": "paulstaszko@gmail.com",
+    "website": ""
+  },
+  "scripts": {},
+  "dependencies": {
+    "github.com/pstaszko/AHK-Notification": "branch:master"
+  }
+}
