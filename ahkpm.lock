@@ -7,7 +7,7 @@
     {
       "name": "github.com/pstaszko/AHK-Notification",
       "version": "branch:master",
-      "sha": "6db6d059e919e67b73a194877979be3b219f375b",
+      "sha": "15ac21944a781a0d87bf4178ad48dbe1bb8d08ea",
       "installPath": "ahkpm-modules/github.com/pstaszko/AHK-Notification",
       "dependencies": {}
     }
