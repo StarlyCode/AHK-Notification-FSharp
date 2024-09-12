@@ -1,5 +1,6 @@
 namespace AHK_Notification_FSharp
 open System
+open System.IO
 module internal Utils =
     let str (o: Object) = o |> function null -> "" | x -> x.ToString()
     let isNotEmpty = str >> fun x -> x.Trim().Length > 0
@@ -46,9 +47,14 @@ module Notify =
             let exe = System.IO.Path.GetFullPath(exePath)
             let logMessage = $@"{exe} {args}"
             System.IO.File.AppendAllText(logCallsPath, logMessage + Environment.NewLine) |> ignore
+            
+    let getExeDir =
+        let assembly = System.Reflection.Assembly.GetExecutingAssembly()
+        let location = assembly.Location
+        System.IO.Path.GetDirectoryName(location)
 
     let Notify (parameters: Parameters) =
-        let exePath = @"AHK-Notification\AHK-Notification.exe"
+        let exePath = System.IO.Path.Combine(getExeDir, @"AHK-Notification\AHK-Notification.exe")
         if System.IO.File.Exists(exePath) then
             let message = parameters.NotificationText.Substring(0, Math.Min(parameters.NotificationText.Length, parameters.MaximumMessageLength))
             let args =
