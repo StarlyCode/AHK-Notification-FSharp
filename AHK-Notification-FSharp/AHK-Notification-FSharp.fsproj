@@ -9,7 +9,7 @@
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
     <PackageId>StarlyCode.AHK-Notification-FSharp</PackageId>
     <Title>AHK-Notification-FSharp</Title>
-    <VersionPrefix>0.3.18</VersionPrefix>
+    <VersionPrefix>0.3.19</VersionPrefix>
     <Description>
       AHK-Notification-FSharp provides a simple way to display toast notifications from dotnet applications.
     </Description>
