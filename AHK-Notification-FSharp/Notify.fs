@@ -54,8 +54,8 @@ module Notify =
         System.IO.Path.GetDirectoryName(location)
 
     let Notify (parameters: Parameters) =
-        let exePath = System.IO.Path.Combine(getExeDir, @"AHK-Notification\AHK-Notification.exe")
-        if System.IO.File.Exists(exePath) then
+        let ahk_notification_exe = System.IO.Path.Combine(getExeDir, @"AHK-Notification\AHK-Notification.exe")
+        if System.IO.File.Exists(ahk_notification_exe) then
             let message = parameters.NotificationText.Substring(0, Math.Min(parameters.NotificationText.Length, parameters.MaximumMessageLength))
             let args =
                 [
@@ -78,7 +78,7 @@ module Notify =
                 |> Seq.map (fun (k, v) -> 
                     $@"""%s{k}=%s{v}""")
                 |> String.concat " "
-            logCallParameters parameters.LogCallsPath exePath args
-            System.Diagnostics.Process.Start(exePath, args) |> ignore
+            logCallParameters parameters.LogCallsPath ahk_notification_exe args
+            System.Diagnostics.Process.Start(ahk_notification_exe, args) |> ignore
         else
-            failwithf "%s doesn't exist." exePath
+            failwithf "%s doesn't exist." ahk_notification_exe
