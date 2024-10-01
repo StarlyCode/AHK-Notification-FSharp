@@ -1,0 +1,3 @@
+*.ahk eol=lf
+ahkpm.lock eol=lf
+ahkpm.json eol=lf
