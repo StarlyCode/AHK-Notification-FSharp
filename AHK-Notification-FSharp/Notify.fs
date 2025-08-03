@@ -43,11 +43,11 @@ module Notify =
             }
 
     let private logCallParameters logCallsPath exePath args =
-        if logCallsPath |> str |> Seq.length > 0 then 
+        if logCallsPath |> str |> Seq.length > 0 then
             let exe = System.IO.Path.GetFullPath(exePath)
             let logMessage = $@"{exe} {args}"
             System.IO.File.AppendAllText(logCallsPath, logMessage + Environment.NewLine) |> ignore
-            
+
     let getExeDir =
         let assembly = System.Reflection.Assembly.GetExecutingAssembly()
         let location = assembly.Location
@@ -75,7 +75,7 @@ module Notify =
                    //Op: End
                 ]
                 |> Seq.filter (snd >> isNotEmpty)
-                |> Seq.map (fun (k, v) -> 
+                |> Seq.map (fun (k, v) ->
                     $@"""%s{k}=%s{v}""")
                 |> String.concat " "
             logCallParameters parameters.LogCallsPath ahk_notification_exe args
